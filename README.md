@@ -32,3 +32,5 @@ In order to sucesfully run **struc2lammps** and obtain a data file you must have
   For more information about installing python bindings you can visit: https://openbabel.org/docs/dev/Installation/install.html#compile-bindings or https://pypi.org/project/openbabel/
  
 - You also need to have installed [OVITO](https://ovito.org). This is particularly important if your structure is not orthogonal. You will be prompted to specify the location of your OVITO’s Python interpreter. Information about where to find the **ovitos** script can be found here: https://ovito.org/manual/python/introduction/running.html
+
+- [LAMMPS](https://lammps.sandia.gov/doc/Install.html) must be installed (using executable `lmp`)
