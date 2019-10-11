@@ -1,0 +1,52 @@
+###### LAMMPS Fix/Bond Create input file #######
+units          real
+atom_style     full
+boundary       p p p
+pair_style     lj/smooth 10.0 12.0 #dummy pair style
+special_bonds  lj 0.0 1.0 1.0 extra 10000
+bond_style     harmonic
+angle_style    harmonic
+dihedral_style harmonic
+improper_style harmonic
+
+box            tilt large
+read_data      ./bonds/new.lmpdat
+timestep       1
+thermo         1
+thermo_style   custom step etotal ke pe temp density vol pxx pyy pzz lx ly lz
+
+group    C type 1 
+group    H type 2 
+group    O type 3 
+
+group    g0 union C C 
+fix      f1 g0 bond/create 1 1 1 1.672 1
+run      15 
+unfix    f1 
+ 
+group    g1 union C H 
+fix      f1 g1 bond/create 1 1 2 1.177 1
+run      15 
+unfix    f1 
+ 
+group    g2 union C O 
+fix      f1 g2 bond/create 1 1 3 1.562 1
+run      15 
+unfix    f1 
+ 
+group    g3 union H H 
+fix      f1 g3 bond/create 1 2 2 0.682 1
+run      15 
+unfix    f1 
+ 
+group    g4 union H O 
+fix      f1 g4 bond/create 1 2 3 1.067 1
+run      15 
+unfix    f1 
+ 
+group    g5 union O O 
+fix      f1 g5 bond/create 1 3 3 1.452 1
+run      15 
+unfix    f1 
+ 
+write_data ./bonds/bonded.lmpdat 

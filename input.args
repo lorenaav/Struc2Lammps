@@ -1,0 +1,5 @@
+data/sample_cellulose.cif         # Structure file name
+True				# Are box parameters included in file? (yes, then True; no, then False)
+1.1				# Bond scale parameter (for connectivity)
+Dreiding			# Force field (Dreiding or PCFF)
+Gasteiger			# Charge equilibration method (Currently Gasteiger)
