@@ -8,7 +8,7 @@ This tool generates a [data file for LAMMPS](https://lammps.sandia.gov/doc/2001/
 - Sets up energy expression for Dreiding and PCFF force fields (including automatic bond recognition and atom typing)
 - Assigns atomic changes using the Gasteiger method
 
-*Known bug: If resonance ring crosses the boundary, atoms will be incorrectly*
+*Known bug: If resonance ring crosses the boundary, atoms will be incorrectly typed*
 
 ## How to run
 
